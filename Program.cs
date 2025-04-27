@@ -6,17 +6,19 @@ namespace AnimalSound
     {
         static void Main(string[] args)
         {
-            List<Animal> animals = new List<Animal>
-            {
-                new Animal("Dog", "Bark"),
-                new Animal("Cat", "Meow"),
-                new Animal("Cow", "Moo")
-            };
+            List<Animal> animals = new List<Animal>();
+            animals.Add(new Dog());
+            animals.Add(new Cat());
+            animals.Add(new Cat());
+            animals.Add(new Cow());
+            animals.Add(new Cow());
 
-            foreach(var animal in animals)
+            foreach (Animal animal in animals)
             {
-                Console.WriteLine($"{animal.Type} makes sound: {animal.Sound}");
+                Console.WriteLine(animal.GetType() + " makes sound: " + animal.GetSound());
             }
+
+            Console.ReadKey();
         }
     }
 }
